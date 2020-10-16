@@ -41,6 +41,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--引入邮件依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
