@@ -27,7 +27,9 @@ public class ReflectTest {
         for (Field field:declaredFields) {
             field.setAccessible(true);
             System.out.println(field.getName()+"的类型是:"+field.getType());
-            System.out.println(field.get(obj));
+            String s = field.get(obj).toString();
+            System.out.println(s);
+            System.out.println(s.getBytes());
         }
     }
 }
