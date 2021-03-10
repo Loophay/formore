@@ -1,3 +1,4 @@
+/*
 package com.loock.thinkmore.jsonandstr;
 
 import org.springside.modules.mapper.JsonMapper;
@@ -7,10 +8,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+*/
 /**
  * @author loock
  * @date 2020.11.3
- */
+ *//*
+
 public class JsonTransformString {
 
     public static void main(String[] args) throws IOException {
@@ -40,3 +43,4 @@ public class JsonTransformString {
         }
     }
 }
+*/
