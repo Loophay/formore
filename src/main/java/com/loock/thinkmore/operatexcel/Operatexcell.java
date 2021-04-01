@@ -41,15 +41,15 @@ public class Operatexcell {
 
             //用来存放每列标题以及这个标题所对应的列数据的容器
             Map<String, ArrayList<String>> contentResultMap = new HashMap<>();
-            for (Map.Entry<Integer,String> entry: colNumWithContents.entrySet()) {
+            for (Map.Entry<Integer, String> entry : colNumWithContents.entrySet()) {
                 //System.out.println(entry.getKey()+"列："+entry.getValue());
-                for (String bt: bts ) {
+                for (String bt : bts) {
 
-                    if(!StringUtils.isEmpty(entry.getValue()) && entry.getValue().equals(bt)){
+                    if (!StringUtils.isEmpty(entry.getValue()) && entry.getValue().equals(bt)) {
                         ArrayList<String> contents = readColum(file, entry.getKey());
 
                         //讲结果以key-->列标题,value-->列内容保存在map容器中
-                        contentResultMap.put(bt,contents);
+                        contentResultMap.put(bt, contents);
                     }
                 }
             }
@@ -61,7 +61,7 @@ public class Operatexcell {
             }*/
 
             //将每列的数据输出到新的excel文件中
-            writeToExcel(bts,contentResultMap);
+            writeToExcel(bts, contentResultMap);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,6 +70,7 @@ public class Operatexcell {
 
     /**
      * 将结果按列写入新的文件中
+     *
      * @param bts
      * @param contentResultMap
      */
@@ -85,11 +86,10 @@ public class Operatexcell {
             wwb = Workbook.createWorkbook(new File(filePath));
             WritableSheet sheet1 = wwb.createSheet(sheet, 0);
             //表头导航
-            for(int j=0;j<bts.size();j++){
+            for (int j = 0; j < bts.size(); j++) {
                 Label label = new Label(j, 0, bts.get(j));
                 sheet1.addCell(label);
             }
-
 
 
         } catch (IOException | WriteException e) {
@@ -99,13 +99,14 @@ public class Operatexcell {
 
     /**
      * 读取行数据
+     *
      * @param file
      * @param index
-     * @exception Exception
      * @return
+     * @throws Exception
      */
     private static Map<Integer, String> readRow(File file, int index) throws Exception {
-        Map<Integer,String> colNumWithContents = new HashMap<>();
+        Map<Integer, String> colNumWithContents = new HashMap<>();
 
         InputStream is = new FileInputStream(file.getAbsoluteFile());
         Workbook wb = Workbook.getWorkbook(is);
@@ -113,9 +114,9 @@ public class Operatexcell {
 
         int columns = sheet.getColumns();
 
-        for (int i = 0;i<columns;i++){
+        for (int i = 0; i < columns; i++) {
             Cell cell = sheet.getCell(i, index);
-            colNumWithContents.put(cell.getColumn(),cell.getContents());
+            colNumWithContents.put(cell.getColumn(), cell.getContents());
             //System.out.println(cell.getContents()+":位于第"+ cell.getColumn() +"　列");
         }
         return colNumWithContents;
@@ -123,10 +124,11 @@ public class Operatexcell {
 
     /**
      * 读取列数据
+     *
      * @param file
      * @param index
-     * @throws Exception
      * @return
+     * @throws Exception
      */
     private static ArrayList<String> readColum(File file, int index) throws Exception {
         InputStream is = new FileInputStream(file.getAbsoluteFile());

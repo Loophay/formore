@@ -18,15 +18,15 @@ public class ReflectTest {
         user.setGender(1);
         user.setUserName("张三");
         user.setPassword("1234567890");
-        
+
         Object obj = user;
         final Class<?> clz = obj.getClass();
         System.out.println(clz.getTypeName());
 
         Field[] declaredFields = clz.getDeclaredFields();
-        for (Field field:declaredFields) {
+        for (Field field : declaredFields) {
             field.setAccessible(true);
-            System.out.println(field.getName()+"的类型是:"+field.getType());
+            System.out.println(field.getName() + "的类型是:" + field.getType());
             String s = field.get(obj).toString();
             System.out.println(s);
             System.out.println(s.getBytes());

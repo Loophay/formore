@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <jackson.version>2.6.6</jackson.version>
+        <jackson.version>2.11.2</jackson.version>
         <springside.version>4.1.3-GA</springside.version>
     </properties>
 
@@ -73,11 +73,11 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-jaxb-annotations</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
+        </dependency>-->
         <!-- JSON end -->
         <!-- https://mvnrepository.com/artifact/org.springside/springside-core -->
         <!--<dependency>

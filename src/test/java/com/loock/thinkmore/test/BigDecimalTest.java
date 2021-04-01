@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class BigDecimalTest {
     @Test
-    public void test(){
+    public void test() {
         DecimalFormat df = new DecimalFormat();
         String style = "0.00000";
         df.applyPattern(style);
@@ -22,23 +22,24 @@ public class BigDecimalTest {
 
         System.out.println(bd);
     }
+
     @Test
     public String formatInviteCode(String str1) {
         String str2 = "";
         for (int i = 0; i < str1.length(); i++) {
             if (Character.isDigit(str1.charAt(i))) {
                 str2 += str1.charAt(i);
-            }else{
+            } else {
                 break;
             }
         }
         //System.out.println(str2);
-        return  str2;
+        return str2;
     }
 
-    public void test2(){
-        Map<String,String> map = new HashMap<>();
-        map.put("value","1");
+    public void test2() {
+        Map<String, String> map = new HashMap<>();
+        map.put("value", "1");
 
     }
 }
